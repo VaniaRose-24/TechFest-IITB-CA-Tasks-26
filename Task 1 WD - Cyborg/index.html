@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBORG 3.0 | Human-Machine Synaptic Evolution</title>
+  <!-- Google Fonts: Orbitron (Headers), Inter (Body), Share Tech Mono (Terminal/Specs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <!-- Scanlines / High-Tech CRT Overlay Overlay -->
+  <div class="crt-overlay"></div>
+  <div class="hud-grid-overlay"></div>
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- Responsive Navigation -->
+  <nav class="hud-navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="cyber-tag">NF-30</span>
+        <span class="brand-name">NEURO<span class="accent-text">FORGE</span></span>
+      </div>
+      
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">Evolution</a></li>
+        <li><a href="#specs" class="nav-link">Specifications</a></li>
+        <li><a href="#terminal-section" class="nav-link">Terminal</a></li>
+        <li><a href="#timeline" class="nav-link">Roadmap</a></li>
+      </ul>
+
+      <div class="nav-status-panel">
+        <div class="status-indicator">
+          <span class="status-dot green-glow"></span>
+          <span class="status-text font-mono">SYS_SYNC: 98.4%</span>
+        </div>
+        <button id="audio-toggle-btn" class="audio-btn font-mono" title="Toggle System Sound">
+          <span class="sound-wave-icon">🔊</span> AUDIO: OFF
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-grid-layout">
+        
+        <!-- Left: Text content -->
+        <div class="hero-hud-frame">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner top-right"></div>
+          <div class="hud-corner bottom-left"></div>
+          <div class="hud-corner bottom-right"></div>
+          
+          <div class="hud-sub-header font-mono">
+            <span class="hud-line-decor"></span> COGNITIVE UPGRADE PHASE: STABLE <span class="hud-line-decor"></span>
+          </div>
+          
+          <h1 class="hero-title glitch-text" data-text="CYBORG 3.0">CYBORG 3.0</h1>
+          
+          <p class="hero-tagline">
+            Where Human Instinct Meets Machine Intelligence. Augment your consciousness, transcend genetic limitations, and sync with the next-generation neural architecture.
+          </p>
+          
+          <div class="hero-actions">
+            <button class="btn btn-primary open-sync-modal" data-sound="click">
+              <span class="btn-glow-layer"></span>
+              <span class="btn-text">INITIALIZE SYNC</span>
+            </button>
+            <a href="#specs" class="btn btn-secondary" data-sound="click">
+              <span class="btn-text">VIEW SYSTEMS</span>
+            </a>
+          </div>
+
+          <div class="hero-hud-data font-mono">
+            <div class="hud-data-item">
+              <span class="label">COGNITIVE RATIO</span>
+              <span class="value cyan-text">64% BIO // 36% SYN</span>
+            </div>
+            <div class="hud-data-item">
+              <span class="label">CORE TEMP</span>
+              <span class="value magenta-text" id="cpu-temp-display">37.2°C</span>
+            </div>
+            <div class="hud-data-item">
+              <span class="label">LATENCY</span>
+              <span class="value green-text" id="ping-display">0.12ms</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Glowing Cyborg Portrait visual -->
+        <div class="hero-avatar-frame glass-panel">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner top-right"></div>
+          <div class="hud-corner bottom-left"></div>
+          <div class="hud-corner bottom-right"></div>
+          <div class="avatar-scanner-line"></div>
+          <img src="cyborg_portrait.png" alt="CYBORG 3.0 Core Node" class="cyborg-avatar-img">
+          <div class="avatar-hud-overlay font-mono">
+            <span>ID: ARCH-V3.9</span>
+            <span>STATUS: ACTIVE_NODE</span>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="scroll-indicator font-mono">
+        <span class="scroll-text">SCROLL TO CALIBRATE</span>
+        <span class="scroll-arrow">↓</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- About / Evolution Section -->
+  <section id="about" class="about-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-tag font-mono">// PHASE_02_INTEGRATION</div>
+        <h2 class="section-title">THE SYNAPTIC CONVERGENCE</h2>
+        <div class="section-decor-bar"></div>
+      </div>
+
+      <!-- Narrative Lore Panel -->
+      <div class="narrative-wrapper glass-panel">
+        <h3 class="narrative-title font-mono">// SYSTEM_NARRATIVE: CORE DIRECTIVE</h3>
+        <p class="narrative-text">
+          In 3026, humanity hit a cognitive bottleneck. Biological nerves could no longer process the massive flows of quantum net telemetry, leading to synaptic collapse. The establishment of **NeuroForge Labs** offered an escape—integrating carbon-graphene chassis structures directly with digital sub-dural nano-mesh co-processors. **CYBORG 3.0** is not an modification; it is human-machine convergence. By synchronizing your consciousness, you leave behind physical limits to step into a borderless digital expanse.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-content-card glass-panel">
+          <div class="card-glow"></div>
+          <h3 class="card-title"><span class="card-number">01</span> Bionic Augmentation</h3>
+          <p>Re-engineer your physical limitations. The Cyborg 3.0 carbon-alloy chassis replaces standard muscle groups and bone segments with highly responsive graphene actuators, yielding 10x physical efficiency and integrated thermal regulation.</p>
+        </div>
+
+        <div class="about-content-card glass-panel">
+          <div class="card-glow"></div>
+          <h3 class="card-title"><span class="card-number">02</span> Neural Linkage</h3>
+          <p>Direct brain-to-grid synchronization. Utilizing ultra-dense sub-dural nano-mesh structures, the NeuroForge interface translates synaptic pathways to high-speed digital arrays, offering 10Gbps bio-telemetry pipelines.</p>
+        </div>
+
+        <div class="about-content-card glass-panel">
+          <div class="card-glow"></div>
+          <h3 class="card-title"><span class="card-number">03</span> Cognitive Expansion</h3>
+          <p>Never think alone. A distributed prefrontal co-pilot runs concurrently with conscious thought, acting as a secondary reasoning layer that filters massive datasets, resolves calculations, and optimizes sensory perception.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Specifications Section (Interactive Tabs) -->
+  <section id="specs" class="specs-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-tag font-mono">// TELEMETRY_DIAGNOSTICS</div>
+        <h2 class="section-title">SYSTEM SPECIFICATIONS</h2>
+        <div class="section-decor-bar"></div>
+      </div>
+
+      <div class="specs-wrapper glass-panel">
+        <div class="specs-tabs">
+          <button class="spec-tab-btn active" data-tab="neural">NEURAL COHESION</button>
+          <button class="spec-tab-btn" data-tab="chassis">PHYSIO FRAME</button>
+          <button class="spec-tab-btn" data-tab="power">COGNITIVE ENGINE</button>
+        </div>
+
+        <div class="specs-content-container">
+          <!-- Neural Cohesion Tab -->
+          <div class="spec-content active" id="spec-neural">
+            <div class="spec-info-layout">
+              <div class="spec-description">
+                <h3>SYNAPTIC LINKAGE RATINGS</h3>
+                <p>Configuring the consciousness interface requires balancing physical brainwaves with cybernetic cycles. Our nano-linkage ensures perfect cohesion, preventing feedback loops and memory fragmentation.</p>
+                
+                <div class="stat-progress-bars font-mono">
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>SYNC FREQUENCY</span>
+                      <span>4.8 GHz</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 88%"></div></div>
+                  </div>
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>NANO-MESH STABILITY</span>
+                      <span>99.98%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 95%"></div></div>
+                  </div>
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>REFLEX LATENCY</span>
+                      <span>0.04 ms</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 98%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="spec-tactical-display">
+                <div class="hud-wireframe-grid">
+                  <div class="wireframe-crosshair"></div>
+                  <img src="bionic_chassis.png" alt="Chassis Blueprint" class="spec-blueprint-img">
+                  <div class="data-readout font-mono">
+                    <div>LINK TYPE: QUANTUM_SPIN</div>
+                    <div>STATUS: ACTIVE_LINK</div>
+                    <div>CHANNELS: 1048_UP</div>
+                    <div>BIO-VOLT: 0.12V</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Physio Frame Tab -->
+          <div class="spec-content" id="spec-chassis">
+            <div class="spec-info-layout">
+              <div class="spec-description">
+                <h3>CARBON-ALLOY PHYSICAL INTERACTION</h3>
+                <p>The Physiotherapy augmentation matches biological reflexes to titanium exo-frame modules, enabling dynamic shock absorption, advanced thermal heat venting, and near-zero muscle fatigue.</p>
+                
+                <div class="stat-progress-bars font-mono">
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>ACTUATOR STRESS COEFFICIENT</span>
+                      <span>12%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 25%"></div></div>
+                  </div>
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>THERMAL DISSIPATION</span>
+                      <span>96.4%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 96%"></div></div>
+                  </div>
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>MAXIMUM LOAD CAPACITY</span>
+                      <span>850 KG</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 90%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="spec-tactical-display">
+                <div class="hud-wireframe-grid frame-view">
+                  <div class="wireframe-crosshair"></div>
+                  <img src="bionic_chassis.png" alt="Chassis Blueprint" class="spec-blueprint-img">
+                  <div class="data-readout font-mono">
+                    <div>SHELL: GR-TITANIUM</div>
+                    <div>ACTUATION: NANO_FIBER</div>
+                    <div>STRESS: NOMINAL</div>
+                    <div>LOAD_STRETCH: 120%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cognitive Engine Tab -->
+          <div class="spec-content" id="spec-power">
+            <div class="spec-info-layout">
+              <div class="spec-description">
+                <h3>COGNITIVE CO-PROCESSOR</h3>
+                <p>Unleash a dual-core artificial intellect within your neural cortex. The co-processor accelerates spatial mapping, multi-threaded reasoning, and instant code compilation without generating cognitive strain.</p>
+                
+                <div class="stat-progress-bars font-mono">
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>CORE COPROCESS FLOPS</span>
+                      <span>420 TFLOPS</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 92%"></div></div>
+                  </div>
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>AI SYNAPSE INTEGRATION</span>
+                      <span>99.2%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 99%"></div></div>
+                  </div>
+                  <div class="progress-bar-wrapper">
+                    <div class="bar-labels">
+                      <span>THREAD COUNTER</span>
+                      <span>16,384</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 85%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="spec-tactical-display">
+                <div class="hud-wireframe-grid engine-view">
+                  <div class="wireframe-crosshair"></div>
+                  <img src="bionic_chassis.png" alt="Chassis Blueprint" class="spec-blueprint-img">
+                  <div class="data-readout font-mono">
+                    <div>AI MODEL: FORGE_V3_COGNITIVE</div>
+                    <div>NODE STATUS: ONLINE</div>
+                    <div>HEAT DISPERSAL: LIQUID_HE</div>
+                    <div>INTEGRITY: 100%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Diagnostic Console Section -->
+  <section id="terminal-section" class="terminal-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-tag font-mono">// REMOTE_SH_INTERFACE</div>
+        <h2 class="section-title">NEURAL NETWORK CONSOLE</h2>
+        <div class="section-decor-bar"></div>
+      </div>
+
+      <!-- Terminal Profile Layout Grid -->
+      <div class="terminal-layout-grid">
+        
+        <!-- Operator Profile Panel -->
+        <div class="operator-profile glass-panel font-mono">
+          <img src="engineer_avatar.png" alt="Hacker Visor Avatar" class="operator-avatar">
+          <div class="operator-stats">
+            <div class="op-line"><span class="lbl">ALIAS:</span> <span class="cyan-text">NEO_ZERO</span></div>
+            <div class="op-line"><span class="lbl">NODE:</span> <span class="magenta-text">FORGE_01</span></div>
+            <div class="op-line"><span class="lbl">PING:</span> <span class="green-text">STABLE</span></div>
+            <div class="op-line"><span class="lbl">CORTEX:</span> <span class="cyan-text">SYNCED</span></div>
+          </div>
+        </div>
+
+        <!-- Terminal Output Screen -->
+        <div class="terminal-container glass-panel font-mono">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="term-btn term-close"></span>
+              <span class="term-btn term-min"></span>
+              <span class="term-btn term-max"></span>
+            </div>
+            <div class="terminal-title">guest@neuroforge:~ (SSH_SECURE_TUNNEL)</div>
+            <div class="terminal-indicator green-glow"></div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-output" id="terminal-output">
+              <div class="line">// NEUROFORGE COGNITIVE DIAGNOSTIC CONSOLE v3.0 //</div>
+              <div class="line">INITIALIZING LINKAGE HANDSHAKE WITH REMOTE SYSTEMS...</div>
+              <div class="line">CONNECTION ESTABLISHED. SECURITY: LEVEL_4_ACCESS.</div>
+              <div class="line">Type <span class="cyan-text">'help'</span> to retrieve the command list and begin diagnostics.</div>
+              <div class="line">&nbsp;</div>
+            </div>
+            <div class="terminal-input-line">
+              <span class="prompt">guest@neuroforge:~$</span>
+              <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap / Timeline Section -->
+  <section id="timeline" class="timeline-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-tag font-mono">// DEVELOPMENT_SEQUENCE</div>
+        <h2 class="section-title">LAUNCH ROADMAP</h2>
+        <div class="section-decor-bar"></div>
+      </div>
+
+      <div class="timeline-tree">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item left active">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-panel">
+            <span class="timeline-date font-mono">PHASE 01 // Q1-Q2 2026</span>
+            <h3>Bionic Chassis R&D</h3>
+            <p>Laboratory validation of titanium carbon-mesh implants. Successful biomechanical integration trials on test chassis models. Stress tests completed under heavy environmental loads.</p>
+            <div class="timeline-status font-mono green-text">[COMPLETED]</div>
+          </div>
+        </div>
+
+        <div class="timeline-item right active">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-panel">
+            <span class="timeline-date font-mono">PHASE 02 // Q3-Q4 2026</span>
+            <h3>Synaptic Sync Beta</h3>
+            <p>Opening closed-group consciousness sync portals. Calibration of neural mesh pathways. Tuning cognitive co-processors to maintain sync thresholds under variable adrenaline loads.</p>
+            <div class="timeline-status font-mono cyan-text">[ACTIVE TESTING]</div>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-panel">
+            <span class="timeline-date font-mono">PHASE 03 // Q1 2027</span>
+            <h3>Public Cognitive Inject</h3>
+            <p>Open injection nodes globally. Licensing neural co-processors for commercial and scientific operations. Deploying hardware augmentation modules at certified NeuroForge centers.</p>
+            <div class="timeline-status font-mono muted-text">[UPCOMING]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="cta-section">
+    <div class="section-container">
+      <div class="cta-hud-box glass-panel">
+        <div class="cta-decor-corner c-top-left"></div>
+        <div class="cta-decor-corner c-bottom-right"></div>
+        
+        <h2 class="cta-title glitch-text" data-text="READY FOR AUGMENTATION?">READY FOR AUGMENTATION?</h2>
+        <p class="cta-text">
+          Join the evolution. Sync your mind with CYBORG 3.0 and become a founding pioneer in next-gen cybernetic systems. Access slots are highly restricted.
+        </p>
+        
+        <button class="btn btn-primary open-sync-modal" data-sound="click">
+          <span class="btn-glow-layer"></span>
+          <span class="btn-text">INJECT CONSCIOUSNESS</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="hud-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <div class="footer-brand font-mono">NEUROFORGE // LABS</div>
+        <p class="footer-desc">Next-Gen Cybernetic & Cognitive Augmentation Research Institute.</p>
+      </div>
+      
+      <div class="footer-metrics font-mono">
+        <div class="metric">
+          <span class="lbl">CORES TEMP:</span> <span class="val green-text">NORMAL</span>
+        </div>
+        <div class="metric">
+          <span class="lbl">DB_UPLINK:</span> <span class="val cyan-text">ONLINE</span>
+        </div>
+        <div class="metric">
+          <span class="lbl">SECURE_TUNNEL:</span> <span class="val magenta-text">LEVEL_4</span>
+        </div>
+      </div>
+      
+      <div class="footer-copy font-mono">
+        &copy; 3026 NEUROFORGE CO. ALL PATHWAYS CONNECTED.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Neural Sync Injection Modal -->
+  <div class="modal-overlay" id="sync-modal">
+    <div class="modal-container glass-panel">
+      <div class="modal-header">
+        <h3 class="modal-title font-mono">// INITIALIZE SYNC SEQUENCE</h3>
+        <button class="modal-close-btn" id="close-modal-btn">×</button>
+      </div>
+      <div class="modal-body" id="modal-form-view">
+        <p class="modal-desc">
+          Please input your biological identifier details below to queue for neural cortex linkage.
+        </p>
+        <form class="sync-form" id="sync-form">
+          <div class="form-group">
+            <label for="sync-alias" class="font-mono">COGNITIVE_ALIAS (NAME)</label>
+            <input type="text" id="sync-alias" placeholder="e.g. Neo-Zero" required>
+          </div>
+          <div class="form-group">
+            <label for="sync-port" class="font-mono">CORTEX_IP (EMAIL)</label>
+            <input type="email" id="sync-port" placeholder="e.g. pilot@neuro.net" required>
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="sync-consent" required>
+            <label for="sync-consent" class="consent-label">
+              I consent to sub-dural nano-mesh scanning and neural array mapping.
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit-btn">
+            <span class="btn-glow-layer"></span>
+            <span class="btn-text">INJECT LINKAGE</span>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Simulated Loading View (Hidden by default) -->
+      <div class="modal-body hidden" id="modal-loading-view">
+        <div class="sync-loader">
+          <div class="spinner-ring"></div>
+          <div class="loader-scanlines"></div>
+        </div>
+        <h4 class="sync-status-header font-mono">ESTABLISHING SYNAPSE HANDSHAKE...</h4>
+        <div class="sync-progress-bar-track">
+          <div class="sync-progress-bar-fill" id="sync-loader-fill"></div>
+        </div>
+        <div class="sync-console-log font-mono" id="sync-console-log">
+          <div>> Contacting sub-dural node...</div>
+        </div>
+      </div>
+
+      <!-- Success View (Hidden by default) -->
+      <div class="modal-body hidden" id="modal-success-view">
+        <div class="success-icon-hud font-mono">
+          <div class="checkmark-circle">✓</div>
+          <div class="success-glow"></div>
+        </div>
+        <h4 class="success-header font-mono">NEURAL CONVERGENCE ESTABLISHED</h4>
+        <p class="success-desc">
+          Your cognitive alias has been injected into the NeuroForge master node. Stand by for synaptic alignment instructions sent to your cortex port.
+        </p>
+        <button class="btn btn-primary" id="success-close-btn">
+          <span class="btn-text">RETURN TO MAIN HUD</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
